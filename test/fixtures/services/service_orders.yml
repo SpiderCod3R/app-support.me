@@ -1,0 +1,17 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  IDService: 1
+  IDClient: 1
+  IDRequester: 1
+  started_at: 2023-06-14 19:33:25
+  finished_at: 2023-06-14 19:33:25
+  value: 1.5
+
+two:
+  IDService: 1
+  IDClient: 1
+  IDRequester: 1
+  started_at: 2023-06-14 19:33:25
+  finished_at: 2023-06-14 19:33:25
+  value: 1.5
