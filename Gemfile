@@ -30,3 +30,4 @@ group :development do
 end
 
 gem 'cpf_cnpj'
+gem "active_model_serializers"

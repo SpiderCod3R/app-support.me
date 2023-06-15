@@ -8,7 +8,7 @@ class Services::ServiceOrder
   field :finished_at, type: Time
   field :value, type: Float
 
-  has_and_belongs_to_many :services, join_table: "Services::TypeOfService", foreign_key: "IDService"
+  #has_and_belongs_to_many :services, join_table: "Services::TypeOfService", foreign_key: "IDService"
   has_one :requester, class_name: "Client::Requester", foreign_key: "IDRequester"
   has_one :company, class_name: "Client::Company", foreign_key: "IDClient"
 end
