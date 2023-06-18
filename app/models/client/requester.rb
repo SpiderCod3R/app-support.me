@@ -8,4 +8,11 @@ class Client::Requester
   validates :first_name, :last_name, :phone_number, presence: true, uniqueness: true
 
   belongs_to :company, class_name: "Client::Company", foreign_key: "IDCompany"
+
+  def as_json(options={})
+    super(
+      root: false,
+      except: [:created_at, :updated_at]
+    )
+  end
 end

@@ -4,8 +4,11 @@ Rails.application.routes.draw do
       resources :services
     end
 
-    namespace :client do
-      resources :companies
+    namespace :client, shallow: true do
+      resources :companies do
+        resources :requesters
+      end
+      resources :requesters
     end
   end
 

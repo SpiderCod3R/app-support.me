@@ -1,4 +1,4 @@
-class Client::CompaniesController < ApplicationController
+class V1::Client::CompaniesController < ApplicationController
   before_action :set_client_company, only: %i[ show update destroy ]
 
   # GET /client/companies
@@ -16,9 +16,8 @@ class Client::CompaniesController < ApplicationController
   # POST /client/companies
   def create
     @client_company = Client::Company.new(client_company_params)
-
     if @client_company.save
-      render json: @client_company, status: :created, location: @client_company
+      render json: @client_company, status: :created
     else
       render json: @client_company.errors, status: :unprocessable_entity
     end
@@ -35,7 +34,11 @@ class Client::CompaniesController < ApplicationController
 
   # DELETE /client/companies/1
   def destroy
-    @client_company.destroy
+    if @client_company.destroy
+      render json: {status: :no_content, message: "Company Successfully deleted"}
+    else
+      render json: ErrorSerializer.serialize(@client_company.errors), status: :unprocessable_entity
+    end
   end
 
   private
@@ -46,6 +49,6 @@ class Client::CompaniesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def client_company_params
-      params.require(:client_company).permit(:name, :nr_doc, :fantasy_name)
+      params.require(:company).permit(:name, :nr_doc, :fantasy_name, requesters_attributes: [:_id, :first_name, :last_name, :phone_number, :_destroy])
     end
 end
