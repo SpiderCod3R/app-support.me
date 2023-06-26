@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   concern :api_base do
     namespace :services do
+      resources :service_orders
       resources :services
     end
 

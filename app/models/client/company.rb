@@ -29,14 +29,6 @@ class Client::Company
   def as_json(options={})
     super(
       root: false,
-      include: {requesters: {
-          only: [
-            :first_name,
-            :last_name,
-            :phone_number
-          ]
-        }
-      },
       except: [:created_at, :updated_at]
     )
   end
