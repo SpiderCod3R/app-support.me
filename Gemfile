@@ -18,7 +18,7 @@ gem "puma", "~> 5.0"
 gem "tzinfo-data", platforms: %i[ mingw mswin x64_mingw jruby ]
 gem "bootsnap", require: false
 
-# gem "rack-cors"
+gem "rack-cors"
 
 group :development, :test do
   gem "debug", platforms: %i[ mri mingw x64_mingw ]
@@ -31,3 +31,9 @@ end
 
 gem 'cpf_cnpj'
 gem "active_model_serializers"
+
+gem 'jwt', '~> 2.2', '>= 2.2.3'
+gem 'devise', '~> 4.9', '>= 4.9.2'
+gem 'devise_token_auth', '~> 1.2'
+gem 'mongoid-locker', '~> 2.0', '>= 2.0.2'
+gem 'devise-i18n', '~> 1.11'
