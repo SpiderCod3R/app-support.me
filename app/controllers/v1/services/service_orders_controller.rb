@@ -1,4 +1,4 @@
-class V1::Services::ServiceOrdersController < ApplicationController
+class V1::Services::ServiceOrdersController < ApiController
   before_action :set_v1_services_service_order, only: %i[ show update destroy ]
 
   # GET /v1/services/service_orders

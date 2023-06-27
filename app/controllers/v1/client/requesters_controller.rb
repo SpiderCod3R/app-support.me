@@ -1,4 +1,4 @@
-class V1::Client::RequestersController < ApplicationController
+class V1::Client::RequestersController < ApiController
   before_action :set_client_requester, only: %i[ show update destroy ]
 
   # GET /client/requesters

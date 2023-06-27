@@ -1,4 +1,4 @@
-class V1::Client::CompaniesController < ApplicationController
+class V1::Client::CompaniesController < ApiController
   before_action :set_client_company, only: %i[ show update destroy ]
 
   # GET /client/companies

@@ -1,4 +1,4 @@
-class V1::Services::ServicesController < ApplicationController
+class V1::Services::ServicesController < ApiController
   before_action :set_services_service, only: %i[ show update destroy ]
 
   # GET /services/services
