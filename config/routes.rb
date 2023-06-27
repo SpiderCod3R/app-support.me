@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  mount_devise_token_auth_for 'User', at: 'auth'
+
   concern :api_base do
     namespace :services do
       resources :service_orders
@@ -11,6 +13,7 @@ Rails.application.routes.draw do
       end
       resources :requesters
     end
+    
   end
 
   namespace :v1 do
